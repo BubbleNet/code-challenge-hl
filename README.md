@@ -20,4 +20,4 @@ podman run code-challenge-hl
 
 ### Postman
 
-A postman collection for the API endpoints can be found in `.code-challenge-hl/test/postman`
+A postman collection for the API endpoints can be found in `code-challenge-hl/test/postman`
