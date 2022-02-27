@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "680f3e85-b200-418f-b617-0b7a4dbc0b1b",
+		"name": "Session Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "session",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"8996264b-b3e9-4a69-aac6-2591994b71c9\",\n    \"session_title\": \"Discus with Dave\",\n    \"routine\": \"0d2c8d64-844f-4104-bc2f-fb78abe0e5d8\",\n    \"timestamp\": \"2022-03-05T15:00:00Z\",\n    \"session_duration\": \"5h30m40s\",\n    \"frequency\": \"weekly\",\n    \"reminders\": [\n        \"2022-03-05T15:00:00Z\",\n        \"2022-03-05T14:00:00Z\",\n        \"2022-03-04T15:00:00Z\",\n        \"2022-03-03T15:00:00Z\"\n    ],\n    \"notes\": [\n        \"Welcome to Discus with Dave!\",\n        \"Selecting a discus of the proper radius and weight...\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "0.0.0.0:8080/session",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reminders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "0.0.0.0:8080/reminders/eea65128-97f7-11ec-9030-acde48001122",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"reminders",
+						"eea65128-97f7-11ec-9030-acde48001122"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

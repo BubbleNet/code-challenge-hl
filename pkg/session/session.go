@@ -21,7 +21,6 @@ type (
 
 	// JsonSession
 	//ASSUMPTION: Routine will be passed as a RoutineId
-	// ASSUMPTION: Reminders will be passed as a []ReminderId
 	JsonSession struct {
 		UserId          string   `json:"user_id"`
 		SessionTitle    string   `json:"session_title"`
@@ -33,6 +32,11 @@ type (
 		Notes           []string `json:"notes"`
 	}
 )
+
+func (s *Session) GetReminders() []*reminder.Reminder {
+	// TODO: Return copies instead of references
+	return s.reminders
+}
 
 // ToSession converts a json representation of a Session to a Session with go types
 func (j *JsonSession) ToSession() (*Session, error) {

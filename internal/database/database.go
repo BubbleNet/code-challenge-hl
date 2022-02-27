@@ -33,12 +33,11 @@ func (d *Database) SetSession(s *session.Session) (uuid.UUID, error) {
 	return sessionId, nil
 }
 
-// GetReminders returns a copy of all reminders in the database
+// GetReminders returns a copy of all reminders in a session
 // TODO: Support pagination
-func (d *Database) GetReminders() []reminder.Reminder {
-	var reminders []reminder.Reminder
-	for _, value := range d.reminders {
-		reminders = append(reminders, *value)
+func (d *Database) GetReminders(sessionId uuid.UUID) ([]*reminder.Reminder, error) {
+	if s, ok := d.sessions[sessionId]; ok {
+		return s.GetReminders(), nil
 	}
-	return reminders
+	return []*reminder.Reminder{}, nil
 }
